@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://db8uxj5662udj"]
+
+[ext_resource type="PackedScene" uid="uid://cy54md71iotk1" path="res://parque.tscn" id="1_6y3my"]
+[ext_resource type="Script" path="res://main.gd" id="1_h3b1g"]
+[ext_resource type="PackedScene" uid="uid://pw0fsxbcqprn" path="res://sprite_2d.tscn" id="2_ij1li"]
+[ext_resource type="PackedScene" uid="uid://baq3sm37v60m4" path="res://parede_estacionamento.tscn" id="3_j1pe8"]
+[ext_resource type="Texture2D" uid="uid://b84dec12ad5y8" path="res://voce perdeu.png" id="5_j2hcw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_h3b1g")
+
+[node name="Node2D" parent="." instance=ExtResource("1_6y3my")]
+
+[node name="parede_estacionamento" parent="." instance=ExtResource("3_j1pe8")]
+position = Vector2(603, 388)
+
+[node name="parede_estacionamento5" parent="." instance=ExtResource("3_j1pe8")]
+position = Vector2(582, 263)
+rotation = -3.14159
+
+[node name="parede_estacionamento3" parent="." instance=ExtResource("3_j1pe8")]
+position = Vector2(301, 387)
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_ij1li")]
+position = Vector2(111, 319)
+rotation = 1.57079
+
+[node name="Popup" type="Popup" parent="."]
+title = "voceperdeu"
+initial_position = 1
+size = Vector2i(200, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Popup"]
+texture = ExtResource("5_j2hcw")
+offset = Vector2(100, 50)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

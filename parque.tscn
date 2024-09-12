@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy54md71iotk1"]
+
+[ext_resource type="Texture2D" uid="uid://bc7lr20qx0fl4" path="res://estacionamento.png" id="1_85x6t"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.75, 325.25)
+scale = Vector2(4.63655, 3.19951)
+texture = ExtResource("1_85x6t")
